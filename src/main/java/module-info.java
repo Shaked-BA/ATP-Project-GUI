@@ -1,8 +1,8 @@
-module com.example.atpprojectgui {
+module com.example.javafx {
     requires javafx.controls;
     requires javafx.fxml;
 
 
-    opens com.example.atpprojectgui to javafx.fxml;
-    exports com.example.atpprojectgui;
+    opens View to javafx.fxml;
+    exports View;
 }
