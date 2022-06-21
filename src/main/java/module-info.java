@@ -1,6 +1,7 @@
 module com.example.javafx {
     requires javafx.controls;
     requires javafx.fxml;
+    requires ATPProjectJAR;
 
 
     opens View to javafx.fxml;

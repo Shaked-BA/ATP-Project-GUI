@@ -1,5 +1,6 @@
 package View;
 
+import algorithms.mazeGenerators.Maze;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.canvas.Canvas;
@@ -11,7 +12,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class MazeDisplayer extends Canvas{
-    private int[][] maze;
+    private Maze maze;
     private int rowPlayer = 0;
     private int colPlayer = 0;
     /*
@@ -69,7 +70,7 @@ public class MazeDisplayer extends Canvas{
         setColPlayer(col);
         draw();
     }
-    public void drawMaze(int[][] maze) {
+    public void drawMaze(Maze maze) {
         this.maze = maze;
         draw();
     }
@@ -78,8 +79,8 @@ public class MazeDisplayer extends Canvas{
         if(maze != null){
             double canvasHeight = getHeight();
             double canvasWidth = getWidth();
-            int rows = maze.length;
-            int cols = maze[0].length;
+            int rows = maze.getRows();
+            int cols = maze.getColumns();
 
             double cellHeight = canvasHeight / rows;
             double cellWidth = canvasWidth / cols;
@@ -97,7 +98,7 @@ public class MazeDisplayer extends Canvas{
             }
             for (int i = 0; i < rows; i++) {
                 for (int j = 0; j < cols; j++) {
-                    if(maze[i][j] == 1){
+                    if(maze.getCellValue(i, j) == 1){
                         //if it is a wall:
                         double w = j * cellWidth;
                         double h = i * cellHeight;

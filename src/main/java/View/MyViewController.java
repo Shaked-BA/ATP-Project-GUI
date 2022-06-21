@@ -3,6 +3,7 @@ package View;
 
 import Model.IModel;
 import ViewModel.MyViewModel;
+import algorithms.mazeGenerators.Maze;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
@@ -35,7 +36,8 @@ public class MyViewController implements IView, Initializable, Observer {
     public Label lbl_playerColumn;
     public StringProperty updatePlayerRow = new SimpleStringProperty();
     public StringProperty updatePlayerColumn = new SimpleStringProperty();
-    private int[][] /* TODO change it to Maze class*/ maze;
+    private Maze maze;
+    int[][] solution;
 
     public void setViewModel(MyViewModel mvm) { this.viewModel = mvm; }
     public String getUpdatePlayerRow() {
@@ -65,13 +67,10 @@ public class MyViewController implements IView, Initializable, Observer {
 
 
     public void generateMaze(ActionEvent actionEvent) {
-        if(generator == null)
-            generator = new MazeGenerator();
 
         int rows = Integer.valueOf(textField_mazeRows.getText());
         int cols = Integer.valueOf(textField_mazeColumns.getText());
         viewModel.generateMaze(rows, cols);
-        int[][] maze = generator.generateRandomMaze(rows, cols);
 
         mazeDisplayer.drawMaze(maze);
     }
@@ -80,7 +79,7 @@ public class MyViewController implements IView, Initializable, Observer {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText("Solving maze...");
         alert.show();
-        this.viewModel.solveMaze(this.maze);
+        this.solution = this.viewModel.getSolution();
     }
 
     public void showAlert (String message)
@@ -92,37 +91,6 @@ public class MyViewController implements IView, Initializable, Observer {
 
     public void keyPressed(KeyEvent keyEvent) {
         this.viewModel.updatePlayer(keyEvent);
-
-        /*
-        int playerR = mazeDisplayer.getRowPlayer();
-        int playerC = mazeDisplayer.getColPlayer();
-        switch (keyEvent.getCode())
-        {
-            case UP:
-                mazeDisplayer.setPlayerPosition(playerR-1, playerC);
-                setUpdatePlayerRow(playerR-1 + "");
-                setUpdatePlayerColumn(playerC + "");
-                break;
-            case DOWN:
-                mazeDisplayer.setPlayerPosition(playerR+1, playerC);
-                setUpdatePlayerRow(playerR+1 + "");
-                setUpdatePlayerColumn(playerC + "");
-                break;
-            case LEFT:
-                mazeDisplayer.setPlayerPosition(playerR, playerC-1);
-                setUpdatePlayerRow(playerR + "");
-                setUpdatePlayerColumn(playerC-1+ "");
-                break;
-            case RIGHT:
-                mazeDisplayer.setPlayerPosition(playerR, playerC+1);
-                setUpdatePlayerRow(playerR + "");
-                setUpdatePlayerColumn(playerC+1 + "");
-                break;
-            default:
-                mazeDisplayer.setPlayerPosition(playerR, playerC);
-                setUpdatePlayerRow(playerR + "");
-                setUpdatePlayerColumn(playerC + "");
-        }*/
         // this will allow us to focus just on the user's keyboard input and not to move to another layout's component
         keyEvent.consume();
     }
@@ -142,7 +110,6 @@ public class MyViewController implements IView, Initializable, Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        //TODO
         if (o instanceof MyViewModel)
         {
             if (maze == null) // Generate Maze
@@ -152,7 +119,7 @@ public class MyViewController implements IView, Initializable, Observer {
             }
             else
             {
-                int[][] mazer = this.viewModel.getMaze();
+                Maze mazer = this.viewModel.getMaze();
                 if (this.maze == mazer) // it's means that the update is not generate maze it's update player
                 {
                     int rowPlayer = this.mazeDisplayer.getRowPlayer();
@@ -161,7 +128,7 @@ public class MyViewController implements IView, Initializable, Observer {
                     int colFromViewModel = this.viewModel.getColPlayer();
                     if (colPlayer == rowFromViewModel && rowPlayer == colFromViewModel) // Solving Maze
                     {
-                        this.viewModel.getSolution();
+                        solution = this.viewModel.getSolution();
                         showAlert("Solving Maze");
                     }
                     else
@@ -169,6 +136,7 @@ public class MyViewController implements IView, Initializable, Observer {
                         setUpdatePlayerRow(rowFromViewModel + "");
                         setUpdatePlayerColumn(colFromViewModel + "");
                         this.mazeDisplayer.setPlayerPosition(rowFromViewModel, colFromViewModel);
+
                     }
                 }
                 else

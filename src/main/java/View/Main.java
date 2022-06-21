@@ -15,16 +15,16 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MyView.fxml") /*Main.class.getResource("MyView.fxml")*/);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MyView.fxml"));
         Parent root = fxmlLoader.load();
         stage.setTitle("Hello World");
         stage.setScene(new Scene(root, 800, 650));
         stage.show();
-
         // Here we start a new instance of ViewModel that connects us with the Model from the View point of view
         IModel model = new MyModel();
         MyViewModel viewModel = new MyViewModel(model);
         MyViewController view = fxmlLoader.getController();
+        viewModel.assignObserver(view);
         view.setViewModel(viewModel);
     }
 

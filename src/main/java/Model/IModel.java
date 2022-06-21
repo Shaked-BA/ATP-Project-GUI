@@ -1,14 +1,18 @@
 package Model;
 
+import algorithms.mazeGenerators.Maze;
+import algorithms.search.AState;
+
+import java.util.ArrayList;
 import java.util.Observer;
 
 public interface IModel {
     public int getRowPlayer();
     public int getColPlayer();
-    public int[][] getMaze();
+    public Maze getMaze();
     public void updatePlayerPosition(int direction);
-    public void generateRandomMaze(int rows, int cols);
+    public void generateMaze(int rows, int cols);
     public void assignObserver(Observer o);
-    public void solveMaze(int[][] /* TODO changed it into Maze representation*/ maze);
-    public void getSolution();
+    public void solveMaze(Maze maze);
+    public ArrayList<AState> getSolution();
 }
