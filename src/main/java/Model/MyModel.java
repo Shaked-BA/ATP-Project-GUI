@@ -116,7 +116,7 @@ public class MyModel extends Observable implements IModel{
                 break;
         }
         setChanged();
-        notifyObservers();
+        notifyObservers("moving");
     }
 
     public void generateMaze(int rows, int cols){
@@ -158,6 +158,6 @@ public class MyModel extends Observable implements IModel{
     }
 
     private boolean isLegalCell(int row, int column) {
-        return (row >= 0 && column >= 0 && row < maze.getRows() && column < maze.getColumns() && maze.getCellValue(row, column) == 1);
+        return (row >= 0 && column >= 0 && row < maze.getRows() && column < maze.getColumns() && maze.getCellValue(row, column) != 1);
     }
 }

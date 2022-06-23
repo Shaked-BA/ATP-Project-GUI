@@ -36,7 +36,7 @@ public class MyViewModel extends Observable implements Observer {
      {
          this.model.generateMaze(rows, cols);
          setChanged();
-         notifyObservers();
+         notifyObservers("generate maze");
      }
     public void updatePlayer(KeyEvent key)
     {
@@ -56,11 +56,15 @@ public class MyViewModel extends Observable implements Observer {
                 this.model.updatePlayerPosition(4);
                 break;
         }
+        setChanged();
+        notifyObservers("moving");
     }
 
     public void solveMaze(Maze maze)
     {
         this.model.solveMaze(maze);
+        setChanged();
+        notifyObservers("solving maze");
     }
     public int[][] getSolution()
     {
@@ -106,8 +110,11 @@ public class MyViewModel extends Observable implements Observer {
                     }
                     else
                     {
-                        this.rowPlayer = rowPlayerT;
-                        this.colPlayer = colPlayerT;
+                        if ("moving" == arg) {
+                            this.rowPlayer = rowPlayerT;
+                            this.colPlayer = colPlayerT;
+                        }
+
                     }
                 }
                 else { this.maze = mazer; }

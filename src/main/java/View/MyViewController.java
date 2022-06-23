@@ -71,7 +71,6 @@ public class MyViewController implements IView, Initializable, Observer {
         int rows = Integer.valueOf(textField_mazeRows.getText());
         int cols = Integer.valueOf(textField_mazeColumns.getText());
         viewModel.generateMaze(rows, cols);
-
         mazeDisplayer.drawMaze(maze);
     }
 
@@ -114,6 +113,48 @@ public class MyViewController implements IView, Initializable, Observer {
         {
             if (maze == null) // Generate Maze
             {
+                if ("generate maze" == arg){
+                    this.maze = this.viewModel.getMaze();
+                    drawMaze();
+                }
+            }
+            else
+            {
+                Maze mazer = this.viewModel.getMaze();
+                int rowPlayer = this.mazeDisplayer.getRowPlayer();
+                int colPlayer = this.mazeDisplayer.getColPlayer();
+                int rowFromViewModel = this.viewModel.getRowPlayer();
+                int colFromViewModel = this.viewModel.getColPlayer();
+                if ("moving" == arg)
+                {
+                    setUpdatePlayerRow(rowFromViewModel + "");
+                    setUpdatePlayerColumn(colFromViewModel + "");
+                    this.mazeDisplayer.setPlayerPosition(rowFromViewModel, colFromViewModel);
+                    drawMaze();
+                }
+                if ("getting solution" == arg)
+                {
+                    solution = this.viewModel.getSolution();
+                }
+                if (this.maze != mazer) // it's means that the update is not generate maze it's update player
+                {
+                    this.maze = mazer;
+                    drawMaze();
+                }
+            }
+        }
+    }
+    private void drawMaze()
+    {
+        this.mazeDisplayer.drawMaze(this.maze);
+    }
+
+    /*@Override
+    public void update(Observable o, Object arg) {
+        if (o instanceof MyViewModel)
+        {
+            if (maze == null) // Generate Maze
+            {
                 this.maze = this.viewModel.getMaze();
                 drawMaze();
             }
@@ -126,17 +167,24 @@ public class MyViewController implements IView, Initializable, Observer {
                     int colPlayer = this.mazeDisplayer.getColPlayer();
                     int rowFromViewModel = this.viewModel.getRowPlayer();
                     int colFromViewModel = this.viewModel.getColPlayer();
+                    if ("moving" == arg)
+                    {
+                        setUpdatePlayerRow(rowFromViewModel + "");
+                        setUpdatePlayerColumn(colFromViewModel + "");
+                        this.mazeDisplayer.setPlayerPosition(rowFromViewModel, colFromViewModel);
+                        drawMaze();
+                    }
                     if (colPlayer == rowFromViewModel && rowPlayer == colFromViewModel) // Solving Maze
                     {
                         solution = this.viewModel.getSolution();
-                        showAlert("Solving Maze");
+                        *//*showAlert("Solving Maze");*//*
                     }
                     else
                     {
                         setUpdatePlayerRow(rowFromViewModel + "");
                         setUpdatePlayerColumn(colFromViewModel + "");
                         this.mazeDisplayer.setPlayerPosition(rowFromViewModel, colFromViewModel);
-
+                        drawMaze();
                     }
                 }
                 else
@@ -146,9 +194,6 @@ public class MyViewController implements IView, Initializable, Observer {
                 }
             }
         }
-    }
-    private void drawMaze()
-    {
-        this.mazeDisplayer.drawMaze(this.maze);
-    }
+    }*/
+
 }
