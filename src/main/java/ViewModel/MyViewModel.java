@@ -4,6 +4,7 @@ import Model.IModel;
 import algorithms.mazeGenerators.Maze;
 import algorithms.search.AState;
 import algorithms.search.MazeState;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
 import java.util.ArrayList;
@@ -38,26 +39,14 @@ public class MyViewModel extends Observable implements Observer {
          setChanged();
          notifyObservers("generate maze");
      }
-    public void updatePlayer(KeyEvent key)
+    public boolean updatePlayer(KeyEvent key)
     {
         /*int moveTO = 0;*/
-        switch (key.getCode())
-        {
-            case UP:
-                this.model.updatePlayerPosition(1);
-                break;
-            case DOWN:
-                this.model.updatePlayerPosition(2);
-                break;
-            case LEFT:
-                this.model.updatePlayerPosition(3);
-                break;
-            case RIGHT:
-                this.model.updatePlayerPosition(4);
-                break;
-        }
+        KeyCode moveTo = key.getCode();
+        boolean finish = this.model.updatePlayerPosition(moveTo);
         setChanged();
         notifyObservers("moving");
+        return finish;
     }
 
     public void solveMaze(Maze maze)

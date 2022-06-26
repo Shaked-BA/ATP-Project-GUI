@@ -4,16 +4,30 @@ package View;
 import Model.IModel;
 import ViewModel.MyViewModel;
 import algorithms.mazeGenerators.Maze;
+import javafx.animation.Interpolator;
+import javafx.animation.ScaleTransition;
+import javafx.animation.SequentialTransition;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.Observable;
@@ -89,7 +103,11 @@ public class MyViewController implements IView, Initializable, Observer {
     }
 
     public void keyPressed(KeyEvent keyEvent) {
-        this.viewModel.updatePlayer(keyEvent);
+        boolean finish = this.viewModel.updatePlayer(keyEvent);
+        if (finish)
+        {
+            IsItTheEnd finale = new IsItTheEnd("Good Job!", "You get to the goal!");
+        }
         // this will allow us to focus just on the user's keyboard input and not to move to another layout's component
         keyEvent.consume();
     }
@@ -115,11 +133,17 @@ public class MyViewController implements IView, Initializable, Observer {
             {
                 if ("generate maze" == arg){
                     this.maze = this.viewModel.getMaze();
+                    this.mazeDisplayer.setPlayerPosition(this.maze.getStartPosition().getRowIndex(), this.maze.getStartPosition().getColumnIndex()); // not sure about this method!
                     drawMaze();
                 }
             }
             else
             {
+                if ("generate maze" == arg){
+                    this.maze = this.viewModel.getMaze();
+                    this.mazeDisplayer.setPlayerPosition(this.maze.getStartPosition().getRowIndex(), this.maze.getStartPosition().getColumnIndex()); // not sure about this method!
+                    drawMaze();
+                }
                 Maze mazer = this.viewModel.getMaze();
                 int rowPlayer = this.mazeDisplayer.getRowPlayer();
                 int colPlayer = this.mazeDisplayer.getColPlayer();
@@ -177,7 +201,7 @@ public class MyViewController implements IView, Initializable, Observer {
                     if (colPlayer == rowFromViewModel && rowPlayer == colFromViewModel) // Solving Maze
                     {
                         solution = this.viewModel.getSolution();
-                        *//*showAlert("Solving Maze");*//*
+                        showAlert("Solving Maze");
                     }
                     else
                     {
@@ -196,4 +220,73 @@ public class MyViewController implements IView, Initializable, Observer {
         }
     }*/
 
+}
+class IsItTheEnd extends Stage
+{
+    private static final Interpolator EXP_IN = new Interpolator() {
+        @Override
+        protected double curve(double v) {
+            return (v == 1.0 ? 1.0 : 1 - Math.pow(2.0, -10*v));
+        }
+    };
+    private static final Interpolator EXP_OUT = new Interpolator() {
+        @Override
+        protected double curve(double v) {
+            return (v == 0.0 ? 0.0 : 1 - Math.pow(2.0, -10*(v-1)));
+        }
+    };
+    private ScaleTransition scale1 = new ScaleTransition();
+    private ScaleTransition scale2 = new ScaleTransition();
+    private SequentialTransition anim = new SequentialTransition(scale1, scale2);
+    IsItTheEnd(String header, String content)
+    {
+        Pane root = new Pane();
+
+        scale1.setFromX(0.01);
+        scale1.setFromY(0.01);
+        scale1.setToY(1.0);
+        scale1.setDuration(Duration.seconds(0.33));
+        scale1.setInterpolator(EXP_IN);
+        scale1.setNode(root);
+
+        scale2.setFromX(0.01);
+        scale2.setToX(1.0);
+        scale2.setDuration(Duration.seconds(0.33));
+        scale2.setInterpolator(EXP_OUT);
+        scale2.setNode(root);
+
+
+        initStyle(StageStyle.UTILITY);
+        initModality(Modality.APPLICATION_MODAL);
+
+        Rectangle backGround = new Rectangle(350, 150, Color.INDIGO);
+        backGround.setStroke(Color.BLANCHEDALMOND);
+        backGround.setStrokeWidth(1.5);
+
+        Text headerText = new Text(header);
+        headerText.setFont(Font.font(20));
+
+        Text contentText = new Text(content);
+        contentText.setFont(Font.font(14));
+
+        VBox box = new VBox(10, headerText, new Separator(Orientation.HORIZONTAL), contentText);
+        box.setPadding(new Insets(15));
+        Button ok = new Button("OK Got It");
+        ok.setTranslateX(backGround.getWidth()-100);
+        ok.setTranslateY(backGround.getHeight()-100);
+        ok.setOnAction(e -> closeDialog());
+
+        root.getChildren().addAll(box, ok);
+        setScene(new Scene(root, null));
+        openDialog();
+    }
+
+    public void openDialog(){ show(); anim.play(); }
+    public void closeDialog()
+    {
+        anim.setOnFinished(e -> close());
+        anim.setAutoReverse(true);
+        anim.setCycleCount(2);
+        anim.playFrom(Duration.seconds(0.66));
+    }
 }

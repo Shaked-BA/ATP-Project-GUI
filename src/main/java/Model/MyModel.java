@@ -13,6 +13,17 @@ import Server.*;
 import algorithms.mazeGenerators.*;
 import algorithms.search.AState;
 import algorithms.search.Solution;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.input.KeyCode;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class MyModel extends Observable implements IModel{
     private Maze maze;
@@ -88,35 +99,65 @@ public class MyModel extends Observable implements IModel{
         /*setChanged();
         notifyObservers();*/
     }
-    public void updatePlayerPosition(int direction)
+
+
+    public boolean updatePlayerPosition(KeyCode moveTo)
     {
-        /*
-        1 -> UP
-        2 -> DOWN
-        3 -> LEFT
-        4 -> RIGHT
-        */
-        switch (direction)
-        {
-            case 1:
-                if (isLegalCell(this.rowPlayer-1, this.colPlayer))
+        int r = rowPlayer;
+        int c = colPlayer;
+        switch (moveTo) {
+            case DIGIT8 :case NUMPAD8:
+                if (isLegalCell(r - 1, c))
                     this.rowPlayer--;
                 break;
-            case 2:
-                if (isLegalCell(this.rowPlayer+1, this.colPlayer))
+            case DIGIT2 :case NUMPAD2:
+                if (isLegalCell(r + 1, c))
                     this.rowPlayer++;
                 break;
-            case 3:
-                if (isLegalCell(this.rowPlayer, this.colPlayer-1))
-                    this.colPlayer--;
-                break;
-            case 4:
-                if (isLegalCell(this.rowPlayer, this.colPlayer+1))
+            case DIGIT6 :case NUMPAD6:
+                if (isLegalCell(r, c + 1))
                     this.colPlayer++;
                 break;
+            case DIGIT4 :case NUMPAD4:
+                if (isLegalCell(r, c - 1))
+                    this.colPlayer--;
+                break;
+            case DIGIT3: case NUMPAD3:
+                if (isLegalCell(r + 1, c + 1))
+                    if (isLegalCell(r, c + 1) || isLegalCell(r + 1, c)) {
+                        this.rowPlayer++;
+                        this.colPlayer++;
+                    }
+                break;
+            case DIGIT1 :case NUMPAD1:
+                if (isLegalCell(r + 1, c - 1))
+                    if (isLegalCell(r, c - 1) || isLegalCell(r + 1, c)) {
+                        this.rowPlayer++;
+                        this.colPlayer--;
+                    }
+                break;
+            case DIGIT9 :case NUMPAD9:
+                if (isLegalCell(r - 1, c + 1))
+                    if (isLegalCell(r - 1, c) || isLegalCell(r, c + 1)) {
+                        this.rowPlayer--;
+                        this.colPlayer++;
+                    }
+                break;
+            case DIGIT7 :case NUMPAD7:
+                if (isLegalCell(r - 1, c - 1))
+                    if (isLegalCell(r, c - 1) || isLegalCell(r - 1, c)) {
+                        this.rowPlayer--;
+                        this.colPlayer--;
+                    }
+                break;
         }
+        boolean finish = false;
+        if (this.maze.getGoalPosition().getRowIndex() == this.rowPlayer && this.maze.getGoalPosition().getColumnIndex() == this.colPlayer)
+            finish = true;
         setChanged();
         notifyObservers("moving");
+        return finish;
+
     }
 
     public void generateMaze(int rows, int cols){
@@ -148,8 +189,11 @@ public class MyModel extends Observable implements IModel{
             var1.printStackTrace();
         }
         this.generator.stop();
+        Position startPos = this.maze.getStartPosition();
+        this.rowPlayer = startPos.getRowIndex();
+        this.colPlayer = startPos.getColumnIndex();
         setChanged();
-        notifyObservers();
+        notifyObservers("generate maze");
     }
 
     public void assignObserver(Observer o)
@@ -161,3 +205,5 @@ public class MyModel extends Observable implements IModel{
         return (row >= 0 && column >= 0 && row < maze.getRows() && column < maze.getColumns() && maze.getCellValue(row, column) != 1);
     }
 }
+
+
