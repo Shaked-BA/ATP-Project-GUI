@@ -252,7 +252,7 @@ class IsItTheEnd extends Stage
         scale2.setFromX(0.01);
         scale2.setToX(1.0);
         scale2.setDuration(Duration.seconds(0.33));
-        scale2.setInterpolator(EXP_OUT);
+        /*scale2.setInterpolator(EXP_OUT);*/
         scale2.setNode(root);
 
 
