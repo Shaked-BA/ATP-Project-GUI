@@ -48,7 +48,10 @@ public class MyViewController implements Observer, IView {
 
     public StringProperty sp_playerRow = new SimpleStringProperty();
     public StringProperty sp_playerColumn = new SimpleStringProperty();
-
+    /**
+     * initializer of the View controller
+     * @param viewModel MyViewModel
+     */
     @Override
     public void initialize(MyViewModel viewModel) {
         this.viewModel = viewModel;
@@ -63,6 +66,14 @@ public class MyViewController implements Observer, IView {
         btn_save.setDisable(true);
     }
 
+    /**
+     * this method execute when the observable Object is notifying
+     * all of his observers that he make a change or update
+     * in this method we handle the update
+     * @param o     the observable object.
+     * @param arg   an argument passed to the {@code notifyObservers}
+     *                 method.
+     */
     @Override
     public void update(Observable o, Object arg) {
         if (o == viewModel) {
@@ -77,6 +88,10 @@ public class MyViewController implements Observer, IView {
         }
     }
 
+    /**
+     * method to display the maze for the user
+     * @param maze int[][]
+     */
     @Override
     public void displayMaze(int[][] maze) {
         mazeDisplayer.setGoal(viewModel.getGoal());
@@ -85,11 +100,18 @@ public class MyViewController implements Observer, IView {
         mazeDisplayer.displayMaze();
     }
 
+    /**
+     * bind the properties of the ViewModel into the text property of the maze displayer
+     * @param viewModel MyViewModel
+     */
     private void bindProperties(MyViewModel viewModel) {
         lbl_row.textProperty().bind(viewModel.sp_playerRow);
         lbl_column.textProperty().bind(viewModel.sp_playerColumn);
     }
 
+    /**
+     * method that generate the maze by passing it to the ViewModel
+     */
     public void generateMaze() {
         try {
             height = Integer.parseInt(txt_rows.getText());
@@ -105,7 +127,9 @@ public class MyViewController implements Observer, IView {
         btn_save.setDisable(false);
         viewModel.generateMaze(height, width);
     }
-
+    /**
+     * method that solving the maze by passing it to the ViewModel
+     */
     public void solveMaze(ActionEvent actionEvent) {
         showAlert("Oh, Courage... No fear, Muriel is here to guide you!");
         viewModel.solve();
@@ -115,6 +139,11 @@ public class MyViewController implements Observer, IView {
         btn_hint.setDisable(true);
     }
 
+    /**
+     * this method pass to the user a hint for the next step
+     * in order to get to the goal position
+     * @param actionEvent ActionEvent
+     */
     public void getHint(ActionEvent actionEvent) {
         viewModel.getHint();
     }
@@ -123,17 +152,29 @@ public class MyViewController implements Observer, IView {
         Platform.exit();
     }
 
+    /**
+     * show a generic structure for alert
+     * @param alertMessage String
+     */
     private void showAlert(String alertMessage) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText(alertMessage);
         alert.show();
     }
 
+    /**
+     * this method handle situation when key pressed by the user
+     * @param key KeyEvent
+     */
     public void KeyPressed(KeyEvent key) {
         viewModel.move(key.getCode());
         key.consume();
     }
 
+    /**
+     * automatic resize of the window
+     * @param scene Scene
+     */
     public void setResizeEvent(Scene scene) {
         scene.widthProperty().addListener((observableValue, oldSceneWidth, newSceneWidth) -> mazeDisplayer.displayMaze());
         scene.heightProperty().addListener((observableValue, oldSceneHeight, newSceneHeight) -> mazeDisplayer.displayMaze());

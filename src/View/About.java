@@ -27,10 +27,16 @@ public class About extends Observable implements Initializable {
                 Best of luck!
                 You'll need it...""");
     }
+
+    /**
+     * A close method for this Scene
+     */
     public void close() {
         Platform.exit();
     }
-
+    /**
+     * this method is for closing the window "about"
+     */
     public void closeWindow() {
         Stage stage = (Stage) btn_close.getScene().getWindow();
         stage.close();

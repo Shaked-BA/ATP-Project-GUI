@@ -10,6 +10,9 @@ public class Help extends Observable {
     public javafx.scene.control.Button btn_close;
     public javafx.scene.control.Label label = new Label();
 
+    /**
+     * this method prints guides to the user
+     */
     public void initialize() {
         label.setWrapText(true);
         label.setText("if you want save maze, create new maze or load maze->> press file.\n"+
@@ -23,6 +26,9 @@ public class Help extends Observable {
         Platform.exit();
     }
 
+    /**
+     * this method is for closing the window
+     */
     public void closeWindow() {
         Stage stage = (Stage) btn_close.getScene().getWindow();
         stage.close();

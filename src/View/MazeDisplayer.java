@@ -19,6 +19,9 @@ public class MazeDisplayer extends Canvas {
     private Image hintImage;
     private Image goalImage;
 
+    /**
+     * constructor of the Maze Displayer class
+     */
     public MazeDisplayer() {
         try {
             wallImage = new Image(new FileInputStream("resources/images/wall.jpg"));
@@ -32,6 +35,9 @@ public class MazeDisplayer extends Canvas {
         }
     }
 
+    /**
+     * construct the maze and display it to the user
+     */
     public void displayMaze() {
         if (maze != null) {
             double cellHeight = getHeight() / maze.length;
@@ -53,19 +59,34 @@ public class MazeDisplayer extends Canvas {
         }
     }
 
+    /**
+     * setting the maze in our game
+     * @param maze int[][]
+     */
     public void setMaze(int[][] maze) {
         this.maze = maze;
     }
 
+    /**
+     * set the goal position
+     * @param goal int[]
+     */
     public void setGoal(int[] goal) {
         this.goal = goal;
     }
 
+    /**
+     * set the player position on the maze
+     * @param row int
+     * @param column int
+     */
     public void setPlayerPosition(int row, int column) {
         this.row = row;
         this.column = column;
     }
-
+    /*
+     * this is all setters and getters of the images
+     */
     public void setWallImage(Image wallImage) {
         this.wallImage = wallImage;
     }

@@ -18,6 +18,12 @@ import java.io.IOException;
 import java.util.Optional;
 
 public class Main extends Application {
+    /**
+     * this method build all the game and connect View, Model and ViewModel all together
+     * after the launch method, this method will execute
+     * @param stage Stage
+     * @throws IOException
+     */
     @Override
     public void start(Stage stage) throws IOException {
         MyModel model = new MyModel();
@@ -30,7 +36,7 @@ public class Main extends Application {
         stage.setMinWidth(700);
         stage.setTitle("Courage the Cowardly Dog Maze");
         stage.getIcons().add(new Image("file:resources/images/icon.jpeg"));
-        scene.getStylesheets().add(getClass().getResource("Main.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("main.css").toExternalForm());
 
         MyViewController view = fxmlLoader.getController();
         view.setResizeEvent(scene);

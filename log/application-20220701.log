@@ -1,0 +1,188 @@
+2022-07-01 11:51:59.684 [pool-3-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=60059,localport=5400]
+2022-07-01 11:51:59.689 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 10, 10
+2022-07-01 11:51:59.698 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-01 11:51:59.698 [pool-3-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=60059,localport=5400]
+2022-07-01 11:51:59.698 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 11:52:00.687 [pool-3-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 11:52:06.388 [JavaFX Application Thread] INFO  Model.MyModel - player finished maze
+2022-07-01 12:09:14.688 [pool-3-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=60421,localport=5400]
+2022-07-01 12:09:14.694 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 5, 5
+2022-07-01 12:09:14.700 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-01 12:09:14.700 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 12:09:14.700 [pool-3-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=60421,localport=5400]
+2022-07-01 12:09:15.692 [pool-3-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 12:09:19.256 [JavaFX Application Thread] INFO  Model.MyModel - player finished maze
+2022-07-01 12:09:51.062 [pool-3-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=60429,localport=5400]
+2022-07-01 12:09:51.068 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 5, 5
+2022-07-01 12:09:51.073 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-01 12:09:51.073 [pool-3-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=60429,localport=5400]
+2022-07-01 12:09:51.073 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 12:09:52.064 [pool-3-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 12:09:55.247 [JavaFX Application Thread] INFO  Model.MyModel - player finished maze
+2022-07-01 12:11:50.846 [pool-3-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=60448,localport=5400]
+2022-07-01 12:11:50.857 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 5, 5
+2022-07-01 12:11:50.863 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-01 12:11:50.864 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 12:11:50.864 [pool-3-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=60448,localport=5400]
+2022-07-01 12:11:51.852 [pool-3-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 12:11:56.127 [JavaFX Application Thread] INFO  Model.MyModel - player finished maze
+2022-07-01 12:12:25.357 [pool-3-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=60459,localport=5400]
+2022-07-01 12:12:25.363 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 3, 3
+2022-07-01 12:12:25.368 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-01 12:12:25.368 [pool-3-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=60459,localport=5400]
+2022-07-01 12:12:25.368 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 12:12:26.360 [pool-3-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 12:12:29.096 [JavaFX Application Thread] INFO  Model.MyModel - player finished maze
+2022-07-01 12:12:50.951 [pool-3-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=60464,localport=5400]
+2022-07-01 12:12:50.957 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 10, 10
+2022-07-01 12:12:50.963 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-01 12:12:50.963 [pool-3-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=60464,localport=5400]
+2022-07-01 12:12:50.963 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 12:12:51.954 [pool-3-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 12:13:00.423 [JavaFX Application Thread] INFO  Model.MyModel - player finished maze
+2022-07-01 12:13:25.737 [pool-4-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=60473,localport=5400]
+2022-07-01 12:13:25.739 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 10, 10
+2022-07-01 12:13:25.741 [pool-4-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=60473,localport=5400]
+2022-07-01 12:13:25.741 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-01 12:13:25.741 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 12:13:26.738 [pool-4-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 12:13:42.663 [JavaFX Application Thread] INFO  Model.MyModel - player finished maze
+2022-07-01 12:14:21.217 [pool-5-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=60476,localport=5400]
+2022-07-01 12:14:21.218 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 10, 10
+2022-07-01 12:14:21.219 [pool-5-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=60476,localport=5400]
+2022-07-01 12:14:21.219 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-01 12:14:21.219 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 12:14:22.217 [pool-5-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 12:14:27.474 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked a solution for his maze
+2022-07-01 12:14:27.474 [pool-6-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=60477,localport=5401]
+2022-07-01 12:14:27.485 [pool-6-thread-2] ERROR Server.ServerStrategySolveSearchProblem - [Ljava.lang.StackTraceElement;@796e60f4
+2022-07-01 12:14:27.486 [pool-6-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=60477,localport=5401]
+2022-07-01 12:14:27.488 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 12:14:27.488 [JavaFX Application Thread] INFO  Model.MyModel - maze solved successfully
+2022-07-01 12:14:28.475 [pool-6-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 12:14:29.790 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked a solution for his maze
+2022-07-01 12:14:29.790 [pool-7-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=60479,localport=5401]
+2022-07-01 12:14:29.793 [pool-7-thread-2] ERROR Server.ServerStrategySolveSearchProblem - [Ljava.lang.StackTraceElement;@7144830f
+2022-07-01 12:14:29.793 [pool-7-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=60479,localport=5401]
+2022-07-01 12:14:29.795 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 12:14:29.795 [JavaFX Application Thread] INFO  Model.MyModel - maze solved successfully
+2022-07-01 12:14:30.791 [pool-7-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 12:14:32.725 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked a solution for his maze
+2022-07-01 12:14:32.725 [pool-8-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=60480,localport=5401]
+2022-07-01 12:14:32.729 [pool-8-thread-2] ERROR Server.ServerStrategySolveSearchProblem - [Ljava.lang.StackTraceElement;@40f2c5d2
+2022-07-01 12:14:32.730 [pool-8-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=60480,localport=5401]
+2022-07-01 12:14:32.733 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 12:14:32.733 [JavaFX Application Thread] INFO  Model.MyModel - maze solved successfully
+2022-07-01 12:14:33.726 [pool-8-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 12:15:02.505 [pool-3-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=60491,localport=5400]
+2022-07-01 12:15:02.514 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 10, 10
+2022-07-01 12:15:02.522 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-01 12:15:02.522 [pool-3-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=60491,localport=5400]
+2022-07-01 12:15:02.522 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 12:15:03.511 [pool-3-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 12:15:09.679 [JavaFX Application Thread] INFO  Model.MyModel - player finished maze
+2022-07-01 12:15:13.843 [pool-4-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=60494,localport=5400]
+2022-07-01 12:15:13.845 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 10, 10
+2022-07-01 12:15:13.846 [pool-4-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=60494,localport=5400]
+2022-07-01 12:15:13.847 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-01 12:15:13.847 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 12:15:14.846 [pool-4-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 12:15:25.223 [JavaFX Application Thread] INFO  Model.MyModel - player finished maze
+2022-07-01 12:15:29.490 [pool-5-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=60498,localport=5400]
+2022-07-01 12:15:29.492 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 10, 10
+2022-07-01 12:15:29.494 [pool-5-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=60498,localport=5400]
+2022-07-01 12:15:29.494 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-01 12:15:29.494 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 12:15:30.491 [pool-5-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 12:15:31.088 [pool-6-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=60499,localport=5401]
+2022-07-01 12:15:31.089 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked a solution for his maze
+2022-07-01 12:15:31.099 [pool-6-thread-2] ERROR Server.ServerStrategySolveSearchProblem - [Ljava.lang.StackTraceElement;@26be8c18
+2022-07-01 12:15:31.099 [pool-6-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=60499,localport=5401]
+2022-07-01 12:15:31.101 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 12:15:31.102 [JavaFX Application Thread] INFO  Model.MyModel - maze solved successfully
+2022-07-01 12:15:32.091 [pool-6-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 12:15:32.740 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked a solution for his maze
+2022-07-01 12:15:32.740 [pool-7-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=60500,localport=5401]
+2022-07-01 12:15:32.745 [pool-7-thread-2] ERROR Server.ServerStrategySolveSearchProblem - [Ljava.lang.StackTraceElement;@4051aa7b
+2022-07-01 12:15:32.746 [pool-7-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=60500,localport=5401]
+2022-07-01 12:15:32.748 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 12:15:32.748 [JavaFX Application Thread] INFO  Model.MyModel - maze solved successfully
+2022-07-01 12:15:33.741 [pool-7-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 12:19:26.503 [pool-3-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=60573,localport=5400]
+2022-07-01 12:19:26.511 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 10, 10
+2022-07-01 12:19:26.517 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-01 12:19:26.517 [pool-3-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=60573,localport=5400]
+2022-07-01 12:19:26.517 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 12:19:27.507 [pool-3-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 12:19:27.695 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked a solution for his maze
+2022-07-01 12:19:27.695 [pool-4-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=60574,localport=5401]
+2022-07-01 12:19:27.702 [pool-4-thread-2] ERROR Server.ServerStrategySolveSearchProblem - [Ljava.lang.StackTraceElement;@1c332d0a
+2022-07-01 12:19:27.703 [pool-4-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=60574,localport=5401]
+2022-07-01 12:19:27.705 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 12:19:27.705 [JavaFX Application Thread] INFO  Model.MyModel - maze solved successfully
+2022-07-01 12:19:28.695 [pool-4-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 13:08:43.221 [pool-3-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=61735,localport=5400]
+2022-07-01 13:08:43.231 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 5, 5
+2022-07-01 13:08:43.239 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-01 13:08:43.239 [pool-3-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=61735,localport=5400]
+2022-07-01 13:08:43.239 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 13:08:44.225 [pool-3-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 13:08:49.172 [JavaFX Application Thread] INFO  Model.MyModel - player finished maze
+2022-07-01 13:08:54.403 [pool-4-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=61737,localport=5400]
+2022-07-01 13:08:54.404 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 5, 5
+2022-07-01 13:08:54.405 [pool-4-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=61737,localport=5400]
+2022-07-01 13:08:54.405 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-01 13:08:54.405 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 13:08:55.403 [pool-4-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 13:08:58.060 [pool-5-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=61738,localport=5401]
+2022-07-01 13:08:58.060 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked a solution for his maze
+2022-07-01 13:09:22.711 [pool-5-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 13:09:22.715 [pool-5-thread-2] ERROR Server.ServerStrategySolveSearchProblem - [Ljava.lang.StackTraceElement;@46a4af78
+2022-07-01 13:09:22.717 [pool-5-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=61738,localport=5401]
+2022-07-01 13:11:24.113 [pool-5-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 13:11:24.136 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 13:11:24.136 [JavaFX Application Thread] INFO  Model.MyModel - maze solved successfully
+2022-07-01 13:11:32.109 [pool-3-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=61776,localport=5400]
+2022-07-01 13:11:32.118 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 10, 10
+2022-07-01 13:11:32.124 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-01 13:11:32.124 [pool-3-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=61776,localport=5400]
+2022-07-01 13:11:32.125 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 13:11:33.112 [pool-3-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 13:11:33.554 [pool-4-thread-1] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=61777,localport=5401]
+2022-07-01 13:11:33.554 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked a solution for his maze
+2022-07-01 13:11:33.574 [pool-4-thread-2] ERROR Server.ServerStrategySolveSearchProblem - [Ljava.lang.StackTraceElement;@6481d1a7
+2022-07-01 13:11:33.575 [pool-4-thread-2] INFO  Server.Server - Done handling client: Socket[addr=/192.168.204.1,port=61777,localport=5401]
+2022-07-01 13:11:33.576 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 13:11:33.576 [JavaFX Application Thread] INFO  Model.MyModel - maze solved successfully
+2022-07-01 13:11:34.556 [pool-4-thread-1] DEBUG Server.Server - Socket timeout
+2022-07-01 14:04:28.626 [Thread-13] INFO  Server.Server - Starting server at port = 5400
+2022-07-01 14:04:28.632 [Thread-13] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=62498,localport=5400]
+2022-07-01 14:04:28.638 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 10, 10
+2022-07-01 14:04:28.644 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-01 14:04:28.644 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 14:04:29.632 [Thread-13] DEBUG Server.Server - Socket timeout
+2022-07-01 14:04:45.829 [JavaFX Application Thread] INFO  Model.MyModel - player finished maze
+2022-07-01 14:05:02.333 [Thread-346] INFO  Server.Server - Starting server at port = 5400
+2022-07-01 14:05:02.336 [Thread-346] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=62507,localport=5400]
+2022-07-01 14:05:02.338 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 10, 10
+2022-07-01 14:05:02.340 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-01 14:05:02.341 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 14:05:03.337 [Thread-346] DEBUG Server.Server - Socket timeout
+2022-07-01 14:05:04.027 [Thread-347] INFO  Server.Server - Starting server at port = 5401
+2022-07-01 14:05:04.047 [Thread-347] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=62508,localport=5401]
+2022-07-01 14:05:04.048 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked a solution for his maze
+2022-07-01 14:05:04.094 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 14:05:04.095 [JavaFX Application Thread] INFO  Model.MyModel - maze solved successfully
+2022-07-01 14:05:05.049 [Thread-347] DEBUG Server.Server - Socket timeout
+2022-07-01 14:05:22.902 [Thread-818] INFO  Server.Server - Starting server at port = 5400
+2022-07-01 14:05:22.903 [Thread-818] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=62512,localport=5400]
+2022-07-01 14:05:22.904 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 10, 10
+2022-07-01 14:05:22.905 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-01 14:05:22.905 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 14:05:23.736 [Thread-860] INFO  Server.Server - Starting server at port = 5401
+2022-07-01 14:05:23.903 [Thread-818] DEBUG Server.Server - Socket timeout
+2022-07-01 14:05:24.237 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked a solution for his maze
+2022-07-01 14:05:24.237 [Thread-860] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=62513,localport=5401]
+2022-07-01 14:05:24.249 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-01 14:05:24.249 [JavaFX Application Thread] INFO  Model.MyModel - maze solved successfully
+2022-07-01 14:05:25.238 [Thread-860] DEBUG Server.Server - Socket timeout
