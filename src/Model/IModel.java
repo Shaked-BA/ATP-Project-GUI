@@ -6,6 +6,7 @@ import java.util.Observer;
 
 public interface IModel {
 
+<<<<<<< HEAD
     /**
      * assign observer into the observable object
      * @param o
@@ -70,5 +71,29 @@ public interface IModel {
      * return the goal position
      * @return int[]
      */
+=======
+    void assignObserver(Observer o);
+
+    void generate(int row, int col);
+
+    void solve();
+
+    void move(KeyCode movement);
+
+    void save();
+
+    void load();
+
+    boolean isFinished();
+
+    int[][] getMazeCells();
+
+    void getHint();
+
+    int getPlayerRow();
+
+    int getPlayerColumn();
+
+>>>>>>> mvvm-packages
     int[] getGoal();
 }

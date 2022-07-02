@@ -4,6 +4,7 @@ import ViewModel.MyViewModel;
 
 public interface IView {
 
+<<<<<<< HEAD
     /**
      * Initializer of the View controller.
      * @param viewModel MyViewModel
@@ -14,5 +15,9 @@ public interface IView {
      * Displays the maze.
      * @param maze int[][]
      */
+=======
+    void initialize(MyViewModel viewModel);
+
+>>>>>>> mvvm-packages
     void displayMaze(int[][] maze);
 }
