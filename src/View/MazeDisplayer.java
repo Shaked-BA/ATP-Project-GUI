@@ -3,7 +3,6 @@ package View;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.input.ScrollEvent;
 
 import java.io.FileInputStream;
 
