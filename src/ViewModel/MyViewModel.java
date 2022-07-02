@@ -1,6 +1,10 @@
 package ViewModel;
 
 import Model.IModel;
+<<<<<<< HEAD
+=======
+import algorithms.mazeGenerators.Position;
+>>>>>>> mvvm-packages
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.input.KeyCode;
@@ -18,15 +22,19 @@ public class MyViewModel extends Observable implements Observer {
     public StringProperty sp_playerRow = new SimpleStringProperty("1");
     public StringProperty sp_playerColumn = new SimpleStringProperty("1");
 
+<<<<<<< HEAD
     /**
      * A constructor of MyViewModel
      * @param model get a model which the ViewModel observes
      */
+=======
+>>>>>>> mvvm-packages
     public MyViewModel(IModel model) {
         this.model = model;
         this.model.assignObserver(this);
     }
 
+<<<<<<< HEAD
     /**
      * this method execute when the observable Object is notifying
      * all of his observers that he make a change or update
@@ -35,6 +43,8 @@ public class MyViewModel extends Observable implements Observer {
      * @param arg   an argument passed to the {@code notifyObservers}
      *                 method.
      */
+=======
+>>>>>>> mvvm-packages
     @Override
     public void update(Observable obs, Object arg) {
         if (obs == model) {
@@ -47,6 +57,7 @@ public class MyViewModel extends Observable implements Observer {
         notifyObservers();
     }
 
+<<<<<<< HEAD
     /**
      * method to generate a maze and pass it to the model
      * @param rows int
@@ -92,6 +103,32 @@ public class MyViewModel extends Observable implements Observer {
      * getter to get the maze
      * @return int[][]
      */
+=======
+    public void generateMaze(int rows, int columns) {
+        model.generate(rows, columns);
+    }
+
+    public void solve() {
+        model.solve();
+    }
+
+    public void move(KeyCode movement) {
+        model.move(movement);
+    }
+
+    public void save() {
+        model.save();
+    }
+
+    public void load() {
+        model.load();
+    }
+
+    public boolean IsFinished() {
+        return model.isFinished();
+    }
+
+>>>>>>> mvvm-packages
     public int[][] getMaze() {
         return model.getMazeCells();
     }
@@ -99,6 +136,7 @@ public class MyViewModel extends Observable implements Observer {
     public void getHint() {
         model.getHint();
     }
+<<<<<<< HEAD
     /**
      * return the goal position
      * @return int[]
@@ -117,6 +155,17 @@ public class MyViewModel extends Observable implements Observer {
      * return the player column position
      * @return int
      */
+=======
+
+    public int[] getGoal() {
+        return model.getGoal();
+    }
+
+    public int getPlayerRow() {
+        return row;
+    }
+
+>>>>>>> mvvm-packages
     public int getPlayerColumn() {
         return column;
     }

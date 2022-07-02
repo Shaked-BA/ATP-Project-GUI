@@ -84,6 +84,7 @@ public class MazeDisplayer extends Canvas {
         this.column = column;
     }
 
+
     /**
      * this is a setter of the wall image
      * @param wallImage Image
@@ -91,6 +92,7 @@ public class MazeDisplayer extends Canvas {
     public void setWallImage(Image wallImage) {
         this.wallImage = wallImage;
     }
+
 
     /**
      * this is a setter for a wall image

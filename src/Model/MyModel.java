@@ -20,8 +20,11 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
+<<<<<<< HEAD
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+=======
+>>>>>>> mvvm-packages
 
 
 public class MyModel extends Observable implements IModel {
@@ -35,20 +38,27 @@ public class MyModel extends Observable implements IModel {
     private Server generator;
     private Server solver;
 
+<<<<<<< HEAD
     private final Logger LOG = LogManager.getLogger(MyModel.class);
     /**
      * assign observer into the observable object
      * @param o
      */
+=======
+>>>>>>> mvvm-packages
     @Override
     public void assignObserver(Observer o) {
         addObserver(o);
     }
+<<<<<<< HEAD
     /**
      * method to generate a game and connect to a server using a new client
      * @param rows
      * @param columns
      */
+=======
+
+>>>>>>> mvvm-packages
     @Override
     public void generate(int rows, int columns){
         generator = new Server(5400, 1000, new ServerStrategyGenerateMaze());
@@ -60,13 +70,20 @@ public class MyModel extends Observable implements IModel {
                         ObjectOutputStream toServer = new ObjectOutputStream(outToServer);
                         ObjectInputStream fromServer = new ObjectInputStream(inFromServer);
                         toServer.flush();
+<<<<<<< HEAD
                         LOG.info("client number: "+InetAddress.getLocalHost()+" asked for maze of size "+rows+", "+columns);
+=======
+>>>>>>> mvvm-packages
                         int[] mazeDimensions = new int[]{rows, columns};
                         toServer.writeObject(mazeDimensions);
                         toServer.flush();
                         byte[] compressedMaze = (byte[])fromServer.readObject();
                         InputStream is = new MyDecompressorInputStream(new ByteArrayInputStream(compressedMaze));
+<<<<<<< HEAD
                         byte[] decompressedMaze = new byte[rows*columns + 12];
+=======
+                        byte[] decompressedMaze = new byte[2512];
+>>>>>>> mvvm-packages
                         is.read(decompressedMaze);
                         maze = new Maze(decompressedMaze);
                         row = maze.getStartPosition().getRowIndex();
@@ -76,15 +93,22 @@ public class MyModel extends Observable implements IModel {
                             for (int c = 0; c < columns; c++)
                                 mazeCells[r][c] = maze.getCellValue(r, c);
                     } catch (Exception var10) {
+<<<<<<< HEAD
                         LOG.error("cannot connect to maze generating server");
+=======
+>>>>>>> mvvm-packages
                         var10.printStackTrace();
                     }
                 }
             });
             client.communicateWithServer();
+<<<<<<< HEAD
             LOG.info("Maze generated.");
         } catch (UnknownHostException var1) {
             LOG.error("Maze generation failed.");
+=======
+        } catch (UnknownHostException var1) {
+>>>>>>> mvvm-packages
             var1.printStackTrace();
         }
         generator.stop();
@@ -93,9 +117,13 @@ public class MyModel extends Observable implements IModel {
         setChanged();
         notifyObservers();
     }
+<<<<<<< HEAD
     /**
      * method to solve the game and update all the observers afterwards
      */
+=======
+
+>>>>>>> mvvm-packages
     @Override
     public void solve() {
         if (mazeSolutionSteps == null)
@@ -108,10 +136,13 @@ public class MyModel extends Observable implements IModel {
         notifyObservers();
     }
 
+<<<<<<< HEAD
     /**
      *  @private this a private method that connect to the server with a new client
      *  and get the solution of the game
      */
+=======
+>>>>>>> mvvm-packages
     private void setSolution() {
         solver = new Server(5401, 1000, new ServerStrategySolveSearchProblem());
         solver.start();
@@ -119,7 +150,10 @@ public class MyModel extends Observable implements IModel {
             Client client = new Client(InetAddress.getLocalHost(), 5401, new IClientStrategy() {
                 public void clientStrategy(InputStream inFromServer, OutputStream outToServer) {
                     try {
+<<<<<<< HEAD
                         LOG.info("Client number: "+InetAddress.getLocalHost()+" asked a solution for his maze");
+=======
+>>>>>>> mvvm-packages
                         ObjectOutputStream toServer = new ObjectOutputStream(outToServer);
                         ObjectInputStream fromServer = new ObjectInputStream(inFromServer);
                         toServer.flush();
@@ -127,13 +161,17 @@ public class MyModel extends Observable implements IModel {
                         toServer.flush();
                         mazeSolutionSteps = ((Solution)fromServer.readObject()).getSolutionPath();
                     } catch (Exception var10) {
+<<<<<<< HEAD
                         LOG.info("Failed solving maze.");
+=======
+>>>>>>> mvvm-packages
                         var10.printStackTrace();
                     }
                 }
             });
             client.communicateWithServer();
         } catch (UnknownHostException var1) {
+<<<<<<< HEAD
             LOG.error("Connection with client failed.");
             var1.printStackTrace();
         }
@@ -145,6 +183,13 @@ public class MyModel extends Observable implements IModel {
      * method that handle the movement from the user in the game
      * @param movement KeyCode
      */
+=======
+            var1.printStackTrace();
+        }
+        solver.stop();
+    }
+
+>>>>>>> mvvm-packages
     @Override
     public void move(KeyCode movement){
         if (maze == null)
@@ -202,6 +247,7 @@ public class MyModel extends Observable implements IModel {
             default:
                 return;
         }
+<<<<<<< HEAD
         if (isFinished())
             LOG.info("player finished maze");
         setChanged();
@@ -210,6 +256,12 @@ public class MyModel extends Observable implements IModel {
     /**
      * method that save the game
      */
+=======
+        setChanged();
+        notifyObservers();
+    }
+
+>>>>>>> mvvm-packages
     @Override
     public void save(){
         FileChooser fileChooser = new FileChooser();
@@ -267,6 +319,7 @@ public class MyModel extends Observable implements IModel {
         }
         mazeSolutionSteps = null;
         cluesSent = 0;
+<<<<<<< HEAD
         LOG.info("maze created successfully");
         setChanged();
         notifyObservers();
@@ -275,22 +328,42 @@ public class MyModel extends Observable implements IModel {
      * method that return boolean if we finish to play
      * @return boolean
      */
+=======
+        setChanged();
+        notifyObservers();
+    }
+
+>>>>>>> mvvm-packages
     @Override
     public boolean isFinished(){
         if (maze == null)
             return false;
         return maze.getGoalPosition().getRowIndex() == getPlayerRow() && maze.getGoalPosition().getColumnIndex() == getPlayerColumn();
     }
+<<<<<<< HEAD
     /**
      * getter to get the maze
      * @return int[][]
+=======
+
+    /**
+     * getter
+     * @return correct maze
+>>>>>>> mvvm-packages
      */
     @Override
     public int[][] getMazeCells(){
         return mazeCells;
     }
+<<<<<<< HEAD
     /**
      * get final solution maze in array
+=======
+
+    /**
+     * getter
+     * @return the final solution maze in array
+>>>>>>> mvvm-packages
      */
     @Override
     public void getHint(){
@@ -309,8 +382,13 @@ public class MyModel extends Observable implements IModel {
     }
 
     /**
+<<<<<<< HEAD
      * return the player row position
      * @return int
+=======
+     * getter
+     * @return row position of character
+>>>>>>> mvvm-packages
      */
     @Override
     public int getPlayerRow(){
@@ -318,29 +396,40 @@ public class MyModel extends Observable implements IModel {
     }
 
     /**
+<<<<<<< HEAD
      * return the player column position
      * @return int
+=======
+     * getter
+     * @return col position of character
+>>>>>>> mvvm-packages
      */
     @Override
     public int getPlayerColumn(){
         return  column;
     }
 
+<<<<<<< HEAD
     /**
      * return the goal position
      * @return int[]
      */
+=======
+>>>>>>> mvvm-packages
     @Override
     public  int[] getGoal() {
         return new int[]{maze.getGoalPosition().getRowIndex(), maze.getGoalPosition().getColumnIndex()};
     }
 
+<<<<<<< HEAD
     /**
      * check if the cell is legal
      * @param row int
      * @param column int
      * @return int
      */
+=======
+>>>>>>> mvvm-packages
     private boolean isLegalCell(int row, int column) {
         return (row >= 0 && column >= 0 && row < maze.getRows() && column < maze.getColumns() && maze.getCellValue(row, column) != 1);
     }

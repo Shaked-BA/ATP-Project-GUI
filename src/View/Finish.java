@@ -2,6 +2,7 @@ package View;
 
 import javafx.application.Platform;
 import javafx.scene.control.Label;
+<<<<<<< HEAD
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Font;
@@ -11,10 +12,15 @@ import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 
+=======
+import javafx.stage.Stage;
+
+>>>>>>> mvvm-packages
 public class Finish {
     public javafx.scene.control.Button btn_close;
     public javafx.scene.control.Label label = new Label();
 
+<<<<<<< HEAD
 
     /**
      * Shows new stage to the user when getting to the goal position.
@@ -31,22 +37,33 @@ public class Finish {
         } catch (Exception e) {
             e.printStackTrace();
         }
+=======
+    public void initialize() {
+        label.setWrapText(true);
+        label.setText("Courage got home safely!\nFOR NOW...");
+>>>>>>> mvvm-packages
         MyViewController.mediaPlayer.pause();
         MyViewController.playMusic("resources/Sound/finishSound.mp3");
     }
 
+<<<<<<< HEAD
     /**
      * A closing method for this Scene.
      */
+=======
+>>>>>>> mvvm-packages
     public void close() {
         MyViewController.mediaPlayer.pause();
         MyViewController.playMusic("resources/Sound/mazeSound.mp3");
         Platform.exit();
     }
 
+<<<<<<< HEAD
     /**
      * Closes the window.
      */
+=======
+>>>>>>> mvvm-packages
     public void closeWindow() {
         MyViewController.mediaPlayer.pause();
         MyViewController.playMusic("resources/Sound/mazeSound.mp3");

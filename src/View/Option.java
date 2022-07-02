@@ -25,35 +25,47 @@ public class Option extends Observable implements Initializable {
     private StringProperty searcher = new SimpleStringProperty("BestFirstSearch");
     private StringProperty threadPool = new SimpleStringProperty("3");
 
+<<<<<<< HEAD
     /**
      * A closing method for this Scene.
      */
+=======
+>>>>>>> mvvm-packages
     public void close() {
         Platform.exit();
     }
 
+<<<<<<< HEAD
     /**
      * Closes the window.
      */
+=======
+>>>>>>> mvvm-packages
     public void closeWindow() {
         Stage s = (Stage) btn_close.getScene().getWindow();
         s.close();
     }
 
+<<<<<<< HEAD
     /**
      * saving the settings information
      */
+=======
+>>>>>>> mvvm-packages
     public void save() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText("Settings Saved:\nGenerating algorithm- " + generator + "\nSearching algorithm- "+ searcher + "\nNumber of thread- " + threadPool);
         alert.show();
     }
 
+<<<<<<< HEAD
     /**
      * Shows game options to the user.
      * @param location URL
      * @param resources ResourceBundle
      */
+=======
+>>>>>>> mvvm-packages
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
@@ -75,10 +87,16 @@ public class Option extends Observable implements Initializable {
         threads.getItems().addAll("1", "2", "3", "4", "5");
     }
 
+<<<<<<< HEAD
     /**
      * this method set our configuration from the configuration file
      */
     public void setConfiguration() {
+=======
+    public void setConfiguration() throws IOException {
+        OutputStream outputStream = new FileOutputStream("resources/config.properties");
+        Properties prop = new Properties();
+>>>>>>> mvvm-packages
         switch (generators.getValue()) {
             case "BreadthFirstSearch":
                 generator.set("BreadthFirstSearch");

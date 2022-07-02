@@ -4,9 +4,16 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
 
+<<<<<<< HEAD
 <Pane minHeight="174.0" minWidth="549.0" prefHeight="631.0" prefWidth="749.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Help">
     <children>
         <Label fx:id="label" alignment="TOP_LEFT" layoutX="28.0" layoutY="8.0" prefHeight="574.0" prefWidth="702.0" />
         <Button fx:id="btn_close" layoutX="325.0" layoutY="577.0" mnemonicParsing="false" onAction="#closeWindow" text="Close Window" />
+=======
+<Pane minHeight="174.0" minWidth="549.0" prefHeight="231.0" prefWidth="549.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Help">
+    <children>
+        <Label fx:id="label" alignment="TOP_LEFT" layoutX="28.0" layoutY="8.0" prefHeight="174.0" prefWidth="502.0" />
+        <Button fx:id="btn_close" layoutX="230.0" layoutY="167.0" mnemonicParsing="false" onAction="#closeWindow" text="Close Window" />
+>>>>>>> mvvm-packages
     </children>
 </Pane>

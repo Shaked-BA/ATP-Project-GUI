@@ -66,12 +66,21 @@
                         <VBox prefHeight="10.0" prefWidth="90.0" />
                         <TextField fx:id="txt_rows" prefHeight="25.0" prefWidth="69.0" text="10" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="txt_columns" prefHeight="25.0" prefWidth="69.0" text="10" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+<<<<<<< HEAD
                         <Text fx:id="txt_insertRow" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert row" translateX="8.0" wrappingWidth="54.16796875" GridPane.rowIndex="1" />
                         <Text fx:id="txt_insertColumn" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert column" translateX="8.0" wrappingWidth="54.16796875" GridPane.rowIndex="4" />
                         <Label fx:id="lbl_row" text="Row" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                         <Label fx:id="lbl_column" text="Column" GridPane.columnIndex="1" GridPane.rowIndex="10" />
                         <Text fx:id="txt_currentRow" layoutX="10.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current row" translateX="8.0" wrappingWidth="150" GridPane.rowIndex="7" />
                         <Text fx:id="txt_currentColumn" layoutX="10.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current column" translateX="8.0" wrappingWidth="150" GridPane.rowIndex="10" />
+=======
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Insert row" translateX="8.0" wrappingWidth="54.16796875" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Insert column" translateX="8.0" wrappingWidth="54.16796875" GridPane.rowIndex="4" />
+                        <Label fx:id="lbl_row" text="Row" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label fx:id="lbl_column" text="Column" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <Text layoutX="10.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current row" translateX="8.0" wrappingWidth="150" GridPane.rowIndex="7" />
+                        <Text layoutX="10.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current column" translateX="8.0" wrappingWidth="150" GridPane.rowIndex="10" />
+>>>>>>> mvvm-packages
                     </children>
                 </GridPane>
                 <AnchorPane prefHeight="200.0" prefWidth="141.0">
