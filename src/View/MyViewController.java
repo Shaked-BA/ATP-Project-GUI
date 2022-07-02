@@ -180,6 +180,10 @@ public class MyViewController implements Observer, IView {
         scene.heightProperty().addListener((observableValue, oldSceneHeight, newSceneHeight) -> mazeDisplayer.displayMaze());
     }
 
+    /**
+     * method that run when the user push the About label
+     * @param actionEvent ActionEvent
+     */
     public void about(ActionEvent actionEvent) {
         try {
             Stage aboutStage = new Stage();
@@ -197,6 +201,10 @@ public class MyViewController implements Observer, IView {
         }
     }
 
+    /**
+     * method that run when the user push the Help label
+     * @param actionEvent ActionEvent
+     */
     public void help(ActionEvent actionEvent) {
         Stage helpStage = new Stage();
         helpStage.setTitle("Help");
@@ -213,7 +221,10 @@ public class MyViewController implements Observer, IView {
             e.printStackTrace();
         }
     }
-
+    /**
+     * method that run when the user push the Option label
+     * @param actionEvent ActionEvent
+     */
     public void option(ActionEvent actionEvent) {
         Stage optionStage = new Stage();
         optionStage.setTitle("Options");
@@ -230,7 +241,9 @@ public class MyViewController implements Observer, IView {
             e.printStackTrace();
         }
     }
-
+    /**
+     * method that run when the user getting to the goal position
+     */
     private void finish() {
         Stage finishStage = new Stage();
         finishStage.setTitle("Finished");
@@ -248,6 +261,10 @@ public class MyViewController implements Observer, IView {
         }
     }
 
+    /**
+     * this method play the music from a path
+     * @param path String
+     */
     public static void playMusic(String path) {
         Media music = new Media(Paths.get(path).toUri().toString());
         mediaPlayer = new MediaPlayer(music);
@@ -256,10 +273,15 @@ public class MyViewController implements Observer, IView {
         mediaPlayer.setOnEndOfMedia(() -> mediaPlayer.seek(Duration.ZERO));
     }
 
+    /**
+     * method that saves the game
+     */
     public void saveGame() {
         viewModel.save();
     }
-
+    /**
+     * method that loads the game
+     */
     public void loadGame() {
         btn_solve.setVisible(true);
         btn_hint.setVisible(true);
@@ -271,6 +293,10 @@ public class MyViewController implements Observer, IView {
         viewModel.load();
     }
 
+    /**
+     * this method handle with click on the game schens
+     * @param mouseEvent MouseEvent
+     */
     public void mouseClicked(MouseEvent mouseEvent) {
         this.mazeDisplayer.requestFocus();
     }

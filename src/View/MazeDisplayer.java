@@ -84,41 +84,72 @@ public class MazeDisplayer extends Canvas {
         this.row = row;
         this.column = column;
     }
-    /*
-     * this is all setters and getters of the images
+    /**
+     * this is a setter of the wall image
+     * @param wallImage Image
      */
     public void setWallImage(Image wallImage) {
         this.wallImage = wallImage;
     }
 
+    /**
+     * this is a setter for a wall image
+     * @param floorImage Image
+     */
     public void setFloorImage(Image floorImage) {
         this.floorImage = floorImage;
     }
-
+    /**
+     * this is a setter for a character image
+     * @param characterImage Image
+     */
     public void setCharacterImage(Image characterImage) {
         this.characterImage = characterImage;
     }
-
+    /**
+     * this is a setter for a solution image
+     * @param solutionImage Image
+     */
     public void setSolutionImage(Image solutionImage) {
         this.solutionImage = solutionImage;
     }
 
+    /**
+     * this is a getter of the Wall image
+     * @return Image
+     */
     public Image getWallImage() {
         return wallImage;
     }
 
+    /**
+     * this is a getter of the Floor image
+     * @return Image
+     */
     public Image getFloorImage() {
         return floorImage;
     }
 
+    /**
+     * this i a getter of the Character image
+     * @return Image
+     */
     public Image getCharacterImage() {
         return characterImage;
     }
 
+    /**
+     * this is a getter of the Solution image
+     * @return
+     */
     public Image getSolutionImage() {
         return solutionImage;
     }
 
+    /**
+     * this is a getter for the Hint image
+     * @return Image
+     */
     public Image getHintImage() {
         return hintImage;
     }
