@@ -25,21 +25,35 @@ public class Option extends Observable implements Initializable {
     private StringProperty searcher = new SimpleStringProperty("BestFirstSearch");
     private StringProperty threadPool = new SimpleStringProperty("3");
 
+    /**
+     * A closing method for this Scene.
+     */
     public void close() {
         Platform.exit();
     }
 
+    /**
+     * Closes the window.
+     */
     public void closeWindow() {
         Stage s = (Stage) btn_close.getScene().getWindow();
         s.close();
     }
 
+    /**
+     * saving the settings information
+     */
     public void save() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText("Settings Saved:\nGenerating algorithm- " + generator + "\nSearching algorithm- "+ searcher + "\nNumber of thread- " + threadPool);
         alert.show();
     }
 
+    /**
+     * Shows game options to the user.
+     * @param location URL
+     * @param resources ResourceBundle
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
@@ -61,9 +75,10 @@ public class Option extends Observable implements Initializable {
         threads.getItems().addAll("1", "2", "3", "4", "5");
     }
 
-    public void setConfiguration() throws IOException {
-        OutputStream outputStream = new FileOutputStream("resources/config.properties");
-        Properties prop = new Properties();
+    /**
+     * this method set our configuration from the configuration file
+     */
+    public void setConfiguration() {
         switch (generators.getValue()) {
             case "BreadthFirstSearch":
                 generator.set("BreadthFirstSearch");

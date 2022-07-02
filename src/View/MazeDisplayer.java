@@ -3,6 +3,7 @@ package View;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.input.ScrollEvent;
 
 import java.io.FileInputStream;
 
@@ -19,19 +20,24 @@ public class MazeDisplayer extends Canvas {
     private Image hintImage;
     private Image goalImage;
 
+    /**
+     * constructor of the Maze Displayer class
+     */
     public MazeDisplayer() {
         try {
             wallImage = new Image(new FileInputStream("resources/images/wall.jpg"));
             floorImage = new Image(new FileInputStream("resources/images/floor.jpg"));
             characterImage= new Image(new FileInputStream("resources/images/character.png"));
             solutionImage = new Image(new FileInputStream("resources/images/solution.png"));
-            hintImage = new Image(new FileInputStream("resources/images/hint.jpg"));
             goalImage = new Image(new FileInputStream("resources/images/goal.jpg"));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * construct the maze and display it to the user
+     */
     public void displayMaze() {
         if (maze != null) {
             double cellHeight = getHeight() / maze.length;
@@ -53,52 +59,112 @@ public class MazeDisplayer extends Canvas {
         }
     }
 
+    /**
+     * setting the maze in our game
+     * @param maze int[][]
+     */
     public void setMaze(int[][] maze) {
         this.maze = maze;
     }
 
+    /**
+     * set the goal position
+     * @param goal int[]
+     */
     public void setGoal(int[] goal) {
         this.goal = goal;
     }
 
+    /**
+     * set the player position on the maze
+     * @param row int
+     * @param column int
+     */
     public void setPlayerPosition(int row, int column) {
         this.row = row;
         this.column = column;
     }
 
+    /**
+     * this is a setter of the wall image
+     * @param wallImage Image
+     */
     public void setWallImage(Image wallImage) {
         this.wallImage = wallImage;
     }
 
+    /**
+     * this is a setter for a wall image
+     * @param floorImage Image
+     */
     public void setFloorImage(Image floorImage) {
         this.floorImage = floorImage;
     }
 
+    /**
+     * this is a setter for a character image
+     * @param characterImage Image
+     */
     public void setCharacterImage(Image characterImage) {
         this.characterImage = characterImage;
     }
 
+    /**
+     * this is a setter for a solution image
+     * @param solutionImage Image
+     */
     public void setSolutionImage(Image solutionImage) {
         this.solutionImage = solutionImage;
     }
 
+    /**
+     * this is a getter of the Wall image
+     * @return Image
+     */
     public Image getWallImage() {
         return wallImage;
     }
 
+    /**
+     * this is a getter of the Floor image
+     * @return Image
+     */
     public Image getFloorImage() {
         return floorImage;
     }
 
+    /**
+     * this i a getter of the Character image
+     * @return Image
+     */
     public Image getCharacterImage() {
         return characterImage;
     }
 
+    /**
+     * this is a getter of the Solution image
+     * @return
+     */
     public Image getSolutionImage() {
         return solutionImage;
     }
 
+    /**
+     * this is a getter for the Hint image
+     * @return Image
+     */
     public Image getHintImage() {
         return hintImage;
+    }
+
+    /**
+     * Resizes stage.
+     * @param width
+     * @param height
+     */
+    public void resize(double width, double height) {
+        setWidth(width);
+        setHeight(height);
+        displayMaze();
     }
 }

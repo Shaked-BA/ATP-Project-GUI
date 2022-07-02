@@ -3,8 +3,7 @@ module View {
     requires javafx.fxml;
     requires javafx.media;
     requires java.desktop;
-    requires ATP.Project.PartB;
-
+    requires ATPProjectJAR;
 
     opens View to javafx.fxml;
     exports View;

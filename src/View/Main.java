@@ -18,6 +18,13 @@ import java.io.IOException;
 import java.util.Optional;
 
 public class Main extends Application {
+
+    /**
+     * this method build all the game and connect View, Model and ViewModel all together
+     * after the launch method, this method will execute
+     * @param stage Stage
+     * @throws IOException
+     */
     @Override
     public void start(Stage stage) throws IOException {
         MyModel model = new MyModel();
@@ -41,6 +48,10 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+     * Closes the stage.
+     * @param stage
+     */
     private void setStageCloseEvent(Stage stage) {
         stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             public void handle(WindowEvent windowEvent) {
@@ -57,6 +68,10 @@ public class Main extends Application {
         });
     }
 
+    /**
+     * Launches main.
+     * @param args
+     */
     public static void main(String[] args) {
         launch();
     }
