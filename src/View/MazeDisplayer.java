@@ -3,7 +3,6 @@ package View;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.input.ScrollEvent;
 
 import java.io.FileInputStream;
 
@@ -17,7 +16,6 @@ public class MazeDisplayer extends Canvas {
     private Image floorImage;
     private Image characterImage;
     private Image solutionImage;
-    private Image hintImage;
     private Image goalImage;
 
     /**
@@ -147,14 +145,6 @@ public class MazeDisplayer extends Canvas {
      */
     public Image getSolutionImage() {
         return solutionImage;
-    }
-
-    /**
-     * this is a getter for the Hint image
-     * @return Image
-     */
-    public Image getHintImage() {
-        return hintImage;
     }
 
     /**
