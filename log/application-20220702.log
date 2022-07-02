@@ -1,0 +1,40 @@
+2022-07-02 11:38:59.992 [Thread-15] INFO  Server.Server - Starting server at port = 5400
+2022-07-02 11:38:59.995 [Thread-15] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=63693,localport=5400]
+2022-07-02 11:38:59.998 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 10, 10
+2022-07-02 11:39:00.005 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-02 11:39:00.005 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-02 11:39:00.020 [Thread-15] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=63694,localport=5400]
+2022-07-02 11:39:00.022 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 10, 10
+2022-07-02 11:39:00.024 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-02 11:39:00.024 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-02 11:39:00.020 [Thread-16] ERROR Server.Server - IOException
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[?:?]
+	at sun.nio.ch.Net.bind(Net.java:552) ~[?:?]
+	at sun.nio.ch.Net.bind(Net.java:541) ~[?:?]
+	at sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:643) ~[?:?]
+	at java.net.ServerSocket.bind(ServerSocket.java:395) ~[?:?]
+	at java.net.ServerSocket.<init>(ServerSocket.java:281) ~[?:?]
+	at java.net.ServerSocket.<init>(ServerSocket.java:172) ~[?:?]
+	at Server.Server.startThread(Server.java:50) ~[ATPProjectJAR.jar:?]
+	at java.lang.Thread.run(Thread.java:831) ~[?:?]
+2022-07-02 11:39:00.115 [Thread-17] INFO  Server.Server - Starting server at port = 5400
+2022-07-02 11:39:00.630 [Thread-17] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=63695,localport=5400]
+2022-07-02 11:39:00.631 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 10, 10
+2022-07-02 11:39:00.634 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-02 11:39:00.634 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-02 11:39:01.630 [Thread-17] DEBUG Server.Server - Socket timeout
+2022-07-02 11:39:05.907 [JavaFX Application Thread] INFO  Model.MyModel - player finished maze
+2022-07-02 11:39:10.601 [Thread-40] INFO  Server.Server - Starting server at port = 5400
+2022-07-02 11:39:10.602 [Thread-40] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=63699,localport=5400]
+2022-07-02 11:39:10.603 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked for maze of size 10, 10
+2022-07-02 11:39:10.604 [JavaFX Application Thread] INFO  Model.MyModel - maze created
+2022-07-02 11:39:10.605 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-02 11:39:11.603 [Thread-40] DEBUG Server.Server - Socket timeout
+2022-07-02 11:39:31.595 [Thread-165] INFO  Server.Server - Starting server at port = 5401
+2022-07-02 11:39:31.606 [Thread-165] INFO  Server.Server - Client accepted: Socket[addr=/192.168.204.1,port=63701,localport=5401]
+2022-07-02 11:39:31.606 [JavaFX Application Thread] INFO  Model.MyModel - client number: LAPTOP-1POVO0L4/192.168.204.1 asked a solution for his maze
+2022-07-02 11:39:31.632 [JavaFX Application Thread] INFO  Server.Server - Stopping server...
+2022-07-02 11:39:31.633 [JavaFX Application Thread] INFO  Model.MyModel - maze solved successfully
+2022-07-02 11:39:32.607 [Thread-165] DEBUG Server.Server - Socket timeout
+2022-07-02 11:39:38.264 [JavaFX Application Thread] INFO  Model.MyModel - player finished maze
