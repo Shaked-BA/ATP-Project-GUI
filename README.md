@@ -1,1 +1,1 @@
-# ATP-Project-GUI
+# Maze-Game
